@@ -3,7 +3,13 @@ import styled from 'styled-components';
 
 function Section() {
   return (
-    <Wrap>Section</Wrap>
+    <Wrap>
+        <ItemText>
+            <h1>Model S</h1>
+            <p>Order Online for Touch Delivery</p>
+        </ItemText>
+        
+        </Wrap>
   )
 }
 
@@ -17,8 +23,10 @@ background-size:cover;
 background-position:center;
 background-repeat:no-repeat;
 background-image: url('/images/model-s.jpg');
+`
 
-
-
+const ItemText = styled.div `
+padding-top:15vh;
+text-align: center;
 
 `
