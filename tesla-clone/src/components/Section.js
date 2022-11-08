@@ -1,24 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Section() {
+function Section({title, description,leftBtnText, rightBtnText}) {
+
     return (
+       
         <Wrap>
+           
             <ItemText>
-                <h1>Model S</h1>
-                <p>Order Online for Touch Delivery</p>
+                <h1>{ title }</h1>
+                <p>{  description }</p>
             </ItemText>
 
+            <Buttons>
             <ButtonGroup>
                 <LeftButton>
-                Custom Order
+                { leftBtnText }
                 </LeftButton>
              
                 <RightButton>
-                    Existing Inventory
+                {  rightBtnText }
                 </RightButton>
             </ButtonGroup>
             <DownArrow src="/images/down-arrow.svg"/>
+            </Buttons>
 
         </Wrap>
     )
@@ -48,7 +53,11 @@ text-align: center;
 
 const ButtonGroup = styled.div`
 display:flex;
-margin-bottom:30px
+margin-bottom:30px;
+
+@media(max-width:768px){
+    flex-direction:column;
+}
 `
 
 const LeftButton = styled.div`
@@ -64,14 +73,19 @@ opacity:0.85;
 font-size:12px;
 text-transform:uppercase;
 cursor:pointer;
-
+margin:8px;
 `
 
 const RightButton = styled(LeftButton)`
- color:white;
+ background-color:white;
+ opacity:0.65;
+ color:black;
 `
 
 const DownArrow = styled.img`
-    margin-top:20px;
+    overflow-x: hidden;
     height:40px;
+    animation: animateDown  infinite 1.5s;
 `
+
+const Buttons = styled.div``
