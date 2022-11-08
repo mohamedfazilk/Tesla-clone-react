@@ -18,9 +18,11 @@ function Section({title, description,leftBtnText, rightBtnText,backgroundImg}) {
                 { leftBtnText }
                 </LeftButton>
              
+                {  rightBtnText &&
                 <RightButton>
-                {  rightBtnText }
+                {  rightBtnText}
                 </RightButton>
+                }
             </ButtonGroup>
             <DownArrow src="/images/down-arrow.svg"/>
             </Buttons>
@@ -43,7 +45,7 @@ display:flex;
 flex-direction:column;
 justify-content:space-between;
 align-items:center;
-background-image:${props=> `url("/images/${props.bgImage}")`}
+background-image:${props=> `url("/images/${props.bgImage}")`} //passing props
 `
 
 const ItemText = styled.div`
